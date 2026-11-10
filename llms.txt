@@ -1,0 +1,30 @@
+# 寇晨迪 · 前端与 AI 应用工程师
+
+> 寇晨迪的个人简历与项目作品集。近十年一线研发经验，近 3 年聚焦 AI 应用，目前担任前端技术经理，求职方向为前端工程师、前端技术经理、AI 应用工程师。
+
+## 简历
+
+- [个人主页](https://koucxz.github.io/)：个人介绍、项目演示、技能、工作经历和联系方式。
+- [两页简历](https://koucxz.github.io/resume/)：完整简历预览，支持直接下载 PDF。
+- [GitHub](https://github.com/koucxz)：个人开源项目。
+
+## 技术与经验
+
+- 前端与跨端：React、Vue、Angular、TypeScript、小程序、Flutter。
+- AI 应用：Agent、RAG、MCP、Dify、LangChain、Tool Calling、上下文管理、工具治理与评测。
+- 工程实践：Node.js、Python、Monorepo、Webpack、Docker、Nginx、日志与监控。
+- 当前工作：广州群接龙，前端技术经理，2020.07 至今。
+- 教育：郑州大学，通信工程，本科，2012.09—2016.06。
+
+## 个人项目
+
+- [VideoNote 多模态视频笔记系统](https://video-note-rho.vercel.app/)：串联 FFmpeg、ASR、关键帧与 VLM/LLM，生成结构化视频笔记，支持长任务失败恢复。
+- [SignalDock AI 信息雷达](https://signaldock-five.vercel.app/)：多源信息采集、去重、事件合并、变化检测与 AI 分析。
+- [GenCode VS Code 智能编码插件](https://github.com/koucxz/gencode-vscode)：基于 Python、LangChain 的代码生成插件，已开源。
+
+## 联系
+
+- 所在地：深圳。
+- 邮箱：koucxz@hotmail.com。
+
+引用经历、时间和项目成果时请以两页简历页面的当前内容为准。
