@@ -1610,16 +1610,14 @@ function ReferenceResume({ copyText }) {
   };
 
   useEffect(() => {
-    const page = document.querySelector(".theme-reference");
     const hero = document.querySelector(".reference-hero");
     const secondScreen = document.querySelector(".ref-projects");
-    const nav = page?.querySelector(".ref-nav");
-    if (!page || !hero || !secondScreen) return undefined;
+    const nav = document.querySelector(".ref-nav");
+    if (!hero || !secondScreen) return undefined;
 
     let isSnapping = false;
     let snapAnimationFrame = 0;
     let unlockTimer;
-    let transitionTimer;
     let touchStartY = 0;
     let touchStartScrollTop = 0;
 
@@ -1644,17 +1642,13 @@ function ReferenceResume({ copyText }) {
 
     const snapTo = (target) => {
       isSnapping = true;
-      const transitionClass = target === hero ? "screen-transition-to-hero" : "screen-transition-to-content";
       const startTop = getScrollTop();
       const targetTop = getSnapTop(target);
       const startTime = performance.now();
-      const duration = 620;
+      const duration = 460;
       const ease = (progress) => 1 - ((1 - progress) ** 3);
 
       cancelSnapAnimation();
-      page.classList.remove("screen-transition-to-hero", "screen-transition-to-content");
-      void page.offsetWidth;
-      page.classList.add(transitionClass);
       const animateScroll = (now) => {
         const progress = Math.min(1, (now - startTime) / duration);
         window.scrollTo(0, startTop + ((targetTop - startTop) * ease(progress)));
@@ -1666,13 +1660,9 @@ function ReferenceResume({ copyText }) {
       };
       snapAnimationFrame = window.requestAnimationFrame(animateScroll);
       window.clearTimeout(unlockTimer);
-      window.clearTimeout(transitionTimer);
       unlockTimer = window.setTimeout(() => {
         isSnapping = false;
       }, 100);
-      transitionTimer = window.setTimeout(() => {
-        page.classList.remove("screen-transition-to-hero", "screen-transition-to-content");
-      }, 760);
     };
 
     const handleWheel = (event) => {
@@ -1723,11 +1713,9 @@ function ReferenceResume({ copyText }) {
     return () => {
       cancelSnapAnimation();
       window.clearTimeout(unlockTimer);
-      window.clearTimeout(transitionTimer);
       document.removeEventListener("wheel", handleWheel, { capture: true });
       document.removeEventListener("touchstart", handleTouchStart);
       document.removeEventListener("touchend", handleTouchEnd);
-      page.classList.remove("screen-transition-to-hero", "screen-transition-to-content");
     };
   }, []);
 
