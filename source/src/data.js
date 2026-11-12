@@ -28,7 +28,7 @@ export const advantages = [
   },
   {
     title: "跨端与全栈交付",
-    text: "能独立完成前端与 Flutter 交互开发、Node.js / Python 后端、Agent 开发和部署、日志与监控，推动复杂业务与 AI 应用从方案设计、接口联调到稳定上线。",
+    text: "能独立完成前端与 Flutter 交互开发、Node.js 后端、Agent 开发和部署、日志与监控，推动复杂业务与 AI 应用从方案设计、接口联调到稳定上线。",
   },
 ];
 

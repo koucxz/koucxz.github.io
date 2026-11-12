@@ -85,7 +85,7 @@ function ResumePreview() {
   useEffect(() => {
     const previousTitle = document.title;
     document.body.classList.add("resume-print-page");
-    document.title = "寇晨迪 · AI 应用工程师简历";
+    document.title = "寇晨迪 · 全栈开发工程师简历";
     return () => {
       document.body.classList.remove("resume-print-page");
       document.title = previousTitle;

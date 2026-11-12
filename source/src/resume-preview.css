@@ -347,6 +347,7 @@
 }
 
 .resume-project {
+  position: relative;
   padding: 6px 0 8px;
 }
 
@@ -398,6 +399,23 @@
   color: var(--resume-accent);
   font-size: 9px;
   font-weight: 700;
+}
+
+.resume-project-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.resume-project-link:focus-visible {
+  outline: none;
+}
+
+.resume-project-link:focus-visible::after {
+  outline: 3px solid var(--resume-accent);
+  outline-offset: -3px;
 }
 
 .resume-education-row {

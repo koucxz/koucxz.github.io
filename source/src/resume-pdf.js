@@ -255,7 +255,7 @@ export async function downloadResumePdf() {
     // 字体文件已经裁剪过字集，再次做子集会丢失部分粗体字形。
     const regularFont = await pdf.embedFont(regularBytes);
     const boldFont = await pdf.embedFont(boldBytes);
-    pdf.setTitle("寇晨迪 · AI 应用工程师简历");
+    pdf.setTitle("寇晨迪 · 全栈开发工程师简历");
     pdf.setAuthor("寇晨迪");
 
     for (const sheet of exportContext.sheets) {
@@ -285,7 +285,7 @@ export async function downloadResumePdf() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "寇晨迪_AI应用工程师_郑州大学.pdf";
+    link.download = "寇晨迪_全栈开发工程师_郑州大学.pdf";
     link.click();
     window.setTimeout(() => URL.revokeObjectURL(url), 60000);
   } finally {

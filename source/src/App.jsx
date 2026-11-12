@@ -1816,7 +1816,12 @@ function ReferenceResume({ copyText }) {
               <Phone size={18} />
             </a>
           </div>
-          <a className="reference-scroll-cue" href="#skills" aria-label="浏览技术栈与精选项目">
+          <a
+            className="reference-scroll-cue"
+            href="#projects"
+            aria-label="浏览个人项目"
+            onClick={(event) => handleNavClick(event, "projects")}
+          >
             <ArrowDown size={20} />
           </a>
         </section>

@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "寇晨迪",
-    "role": "AI 应用工程师",
+    "role": "全栈开发工程师",
     "city": "深圳",
     "phone": "15617922762",
     "email": "koucxz@hotmail.com",
@@ -11,21 +11,37 @@
   "advantages": [
     {
       "title": "业务系统研发与交付",
-      "text": "近十年一线研发经验，近 3 年聚焦 AI 应用，长期承担前端技术经理 / 技术 Owner 职责，覆盖电商、支付、IM、运营后台等复杂业务，具备从需求拆解、方案评审到版本交付的完整推进能力。"
+      "text": "近 10 年一线研发经验，近 3 年聚焦 AI 应用，长期承担前端技术经理 / 技术 Owner 职责，覆盖电商、支付、IM、运营后台等复杂业务，具备从需求拆解、方案评审到版本交付的完整推进能力。"
     },
     {
-      "title": "Agent智能体与应用落地",
-      "text": "主导群接龙经营智能体，完成意图识别、任务编排、上下文管理、Dify/RAG/MCP 集成与多端入口接入，建立 Trace 评测与监控闭环；意图识别 92%，任务成功率 87%。"
+      "title": "Agent智能体交付",
+      "text": "主导群接龙经营智能体，覆盖 Agent 架构、意图识别、RAG、MCP、上下文管理和评测闭环；工具选择成功率 95%，P95 4.8 秒，任务成功率 87%。"
     },
     {
       "title": "跨端与全栈交付",
-      "text": "能独立完成前端与 Flutter 交互开发、Node.js / Python 后端、Agent 开发和部署、日志与监控，推动复杂业务与 AI 应用从方案设计、接口联调到稳定上线。"
+      "text": "能独立完成前端与 Flutter 交互开发、Node.js 后端、Agent 开发和部署、日志与监控，推动复杂业务与 AI 应用从方案设计、接口联调到稳定上线。"
     }
   ],
   "expertise": [
     {
+      "title": "前端与跨端开发",
+      "description": "熟练使用 Vue2/Vue3、React；有 Angular、Flutter 经验，覆盖 PC、H5、小程序与 Hybrid App。"
+    },
+    {
+      "title": "工程化与性能优化",
+      "description": "熟悉 TypeScript、Monorepo、Gulp/Webpack、接口类型生成与单测，擅长增量构建、包体治理与单体拆分。"
+    },
+    {
+      "title": "服务端与接口开发",
+      "description": "围绕公司项目建设 Node.js BFF，接入 Nacos 服务发现，负责接口聚合、参数校验、错误归一化与前后端联调。"
+    },
+    {
+      "title": "部署与日志",
+      "description": "熟悉 Dockerfile/Nginx 部署及 Prometheus/Grafana/阿里云监控；能通过埋点、Sentry 与 traceId 追踪跨端及接口问题。"
+    },
+    {
       "title": "RAG 与知识工程",
-      "description": "熟悉文档清洗、切片、Embedding、向量召回、混合检索、Rerank、上下文组装与引用约束，能定位召回、提示词和生成质量问题，并参与问答评测。"
+      "description": "熟悉文档清洗、切片、Embedding、向量召回、混合检索、Rerank、上下文组装与引用约束，能定位知识入库到问答生成链路中的召回和生成问题。"
     },
     {
       "title": "核心业务MCP工具化",
@@ -36,24 +52,8 @@
       "description": "理解 ReAct、Workflow、Tool Calling 等 Agent 模式，掌握任务拆解、意图路由、工具选择、上下文管理、状态流转、结构化输出与人工确认等关键环节。"
     },
     {
-      "title": "前端与跨端开发",
-      "description": "熟练使用 Vue2/Vue3、React；有 Angular、Flutter 经验，覆盖 PC、H5、小程序与 Hybrid App。"
-    },
-    {
-      "title": "工程化与性能优化",
-      "description": "熟悉 TypeScript、Monorepo、Gulp/Webpack、接口类型生成与单测，擅长增量构建、包体治理与单体拆分。"
-    },
-    {
-      "title": "AI 应用集成",
-      "description": "熟悉 Dify 工作流、MCP Tool Calling、业务 API 与多端入口衔接，能处理参数校验、权限控制和异常反馈。"
-    },
-    {
-      "title": "应用运营与日志",
-      "description": "熟悉 Dockerfile/Nginx 部署及 Prometheus/Grafana/阿里云监控；关注埋点、Sentry、traceId 与用户反馈闭环。"
-    },
-    {
       "title": "AI 工具使用",
-      "description": "2023 年起将 AI 编程用于日常研发，参与过基于 Vibe Coding、SDD 的协作流程；使用 Claude Code、Codex、GitHub Copilot、Trae、Qoder 等工具完成需求拆解、方案设计、编码调试等；部署过 sub2api、new-api。"
+      "description": "2023 年起将 AI 编程用于日常研发，在团队内实践 Vibe Coding、SDD 协作流程；熟练使用 Claude Code、Codex、GitHub Copilot、Trae、Qoder 完成需求拆解、方案设计与编码调试；自建 sub2api、new-api 等多模型接入与转发服务。"
     }
   ],
   "experience": [

@@ -613,6 +613,7 @@ body {
 }
 
 .ref-project-card {
+  position: relative;
   min-width: 0;
   display: grid;
   grid-template-columns: minmax(0, 1.04fr) minmax(380px, 0.96fr);
@@ -744,6 +745,24 @@ body {
   color: var(--ref-orange-deep);
   font-size: 10px;
   font-weight: 750;
+}
+
+.ref-project-footer > a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+.ref-project-footer > a:focus-visible {
+  outline: none;
+}
+
+.ref-project-footer > a:focus-visible::after {
+  outline: 3px solid var(--ref-orange);
+  outline-offset: -3px;
 }
 
 .ref-project-visual {
