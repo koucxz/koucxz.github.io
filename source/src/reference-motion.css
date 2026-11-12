@@ -1,0 +1,249 @@
+html {
+  scroll-padding-top: 74px;
+}
+
+#about,
+#skills,
+#experience,
+#contact,
+[id^="project-"] {
+  scroll-margin-top: 86px;
+}
+
+#projects {
+  scroll-margin-top: 65px;
+}
+
+.resume-app.theme-reference {
+  overflow: visible;
+}
+
+.ref-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 70;
+  border-bottom: 1px solid rgba(43, 68, 112, 0.13);
+  background: rgba(251, 252, 255, 0.9);
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(-18px);
+  transition: opacity 500ms ease, transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.ref-nav.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ref-nav-inner.ref-container {
+  width: min(1200px, calc(100% - 64px));
+  min-height: 64px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ref-nav-links {
+  gap: 28px;
+  color: #53647d;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.ref-nav-links a {
+  position: relative;
+  min-height: 34px;
+  padding: 6px 0;
+  color: #53647d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ref-nav-links a::after {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  background: var(--ref-orange);
+  transition: right 180ms ease, left 180ms ease;
+}
+
+.ref-nav-links a:hover,
+.ref-nav-links a:focus-visible,
+.ref-nav-links a.is-active {
+  color: var(--ref-ink);
+  text-decoration: none;
+}
+
+.ref-nav-links a:hover::after,
+.ref-nav-links a:focus-visible::after,
+.ref-nav-links a.is-active::after {
+  right: 0;
+  left: 0;
+}
+
+.ref-resume-download {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 14px;
+  border: 1px solid rgba(43, 68, 112, 0.22);
+  border-radius: 8px;
+  background: transparent;
+  color: #53647d;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.ref-resume-download:hover {
+  border-color: rgba(49, 104, 216, 0.46);
+  background: var(--ref-orange-soft);
+  color: var(--ref-orange-deep);
+  transform: translateY(-2px);
+}
+
+.theme-reference.reveal-enabled .reveal-on-scroll {
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.theme-reference.reveal-enabled .reveal-on-scroll.is-revealed {
+  transform: none;
+}
+
+@keyframes reference-screen-hero-in {
+  from {
+    opacity: 0.72;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes reference-screen-hero-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0.72;
+    transform: translateY(-22px) scale(0.985);
+  }
+}
+
+@keyframes reference-screen-content-in {
+  from {
+    opacity: 0.72;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reference-screen-content-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0.72;
+    transform: translateY(26px);
+  }
+}
+
+.theme-reference.screen-transition-to-content .reference-hero {
+  animation: reference-screen-hero-out 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.theme-reference.screen-transition-to-content .ref-projects {
+  animation: reference-screen-content-in 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.theme-reference.screen-transition-to-hero .reference-hero {
+  animation: reference-screen-hero-in 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.theme-reference.screen-transition-to-hero .ref-projects {
+  animation: reference-screen-content-out 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reference-hero-card {
+    animation-duration: 720ms !important;
+  }
+
+  .reference-hero-title,
+  .reference-hero-role,
+  .reference-hero-summary,
+  .reference-hero-action,
+  .reference-portrait-area,
+  .reference-scroll-cue {
+    animation-duration: 650ms !important;
+  }
+
+  .ref-nav,
+  .theme-reference.reveal-enabled .reveal-on-scroll {
+    transition-duration: 600ms !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .ref-nav-inner.ref-container {
+    width: calc(100% - 32px);
+    min-height: 60px;
+  }
+
+  .ref-nav-links {
+    display: flex;
+    min-width: 0;
+    gap: 18px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .ref-nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ref-nav-links a {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  html {
+    scroll-padding-top: 60px;
+  }
+
+  .ref-nav-inner.ref-container {
+    width: calc(100% - 24px);
+    min-height: 56px;
+  }
+
+  .ref-nav-links {
+    gap: 14px;
+    font-size: 11px;
+  }
+
+  .ref-resume-download {
+    min-height: 32px;
+    padding: 0 9px;
+    font-size: 10px;
+  }
+
+}
