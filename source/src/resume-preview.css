@@ -639,23 +639,23 @@
   .resume-sheet {
     box-sizing: border-box;
     width: 210mm;
-    height: 297mm;
-    min-height: 297mm;
-    max-height: 297mm;
-    overflow: hidden;
-    padding: 12mm 14mm;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    padding: 9mm 14mm 8mm;
     border: 0;
     box-shadow: none;
     animation: none;
-    break-inside: avoid;
+    break-inside: avoid-page;
     page-break-inside: avoid;
-    break-after: page;
-    page-break-after: always;
-  }
-
-  .resume-sheet:last-child {
     break-after: auto;
     page-break-after: auto;
+  }
+
+  .resume-sheet + .resume-sheet {
+    break-before: page;
+    page-break-before: always;
   }
 
   .resume-sheet::before {
