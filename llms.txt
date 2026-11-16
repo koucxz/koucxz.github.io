@@ -10,7 +10,7 @@
 
 ## 技术与经验
 
-- 前端与跨端：React、Vue、Nuxt、Angular、TypeScript、小程序、Flutter。
+- 前端与跨端：React、Vue、Angular、TypeScript、小程序、Flutter。
 - AI 应用：Agent、RAG、MCP、Dify、LangChain、Tool Calling、上下文管理、工具治理与评测。
 - 工程实践：Node.js、Express.js、NestJS、Python、Monorepo、Webpack、Docker、Nginx、日志与监控。
 - 当前工作：广州群接龙，前端技术经理，2020.07 至今。

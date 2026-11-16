@@ -67,8 +67,8 @@ export const expertise = [
   {
     title: "前端与跨端开发",
     icon: "layers",
-    description: "熟练使用 Vue2/Vue3、Nuxt、React；有 Angular、Flutter 经验，覆盖 PC、H5、小程序与 Hybrid App。",
-    skills: ["Vue", "Nuxt", "React", "Angular", "Flutter", "小程序"],
+    description: "熟练使用 Vue2/Vue3、React；有 Angular、Flutter 经验，覆盖 PC、H5、小程序与 Hybrid App。",
+    skills: ["Vue", "React", "Angular", "Flutter", "小程序"],
   },
   {
     title: "工程化与性能优化",
@@ -116,7 +116,7 @@ export const featuredStack = [
   {
     title: "工程与多端",
     note: "复杂业务与多端交付",
-    skills: ["React", "Vue", "Nuxt", "Angular", "TypeScript", "小程序", "Flutter"],
+    skills: ["React", "Vue", "Angular", "TypeScript", "小程序", "Flutter"],
   },
 ];
 
