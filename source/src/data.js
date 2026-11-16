@@ -28,7 +28,7 @@ export const advantages = [
   },
   {
     title: "跨端与全栈交付",
-    text: "能独立完成前端与 Flutter 交互开发、Node.js 后端、Agent 开发和部署、日志与监控，推动复杂业务与 AI 应用从方案设计、接口联调到稳定上线。",
+    text: "能独立完成前端与 Flutter 交互开发、Node.js 后端（Express.js、NestJS）、Agent 开发和部署、日志与监控，推动复杂业务与 AI 应用从方案设计、接口联调到稳定上线。",
   },
 ];
 
@@ -67,14 +67,20 @@ export const expertise = [
   {
     title: "前端与跨端开发",
     icon: "layers",
-    description: "熟练使用 Vue2/Vue3、React；有 Angular、Flutter 经验，覆盖 PC、H5、小程序与 Hybrid App。",
-    skills: ["Vue", "React", "Angular", "Flutter", "小程序"],
+    description: "熟练使用 Vue2/Vue3、Nuxt、React；有 Angular、Flutter 经验，覆盖 PC、H5、小程序与 Hybrid App。",
+    skills: ["Vue", "Nuxt", "React", "Angular", "Flutter", "小程序"],
   },
   {
     title: "工程化与性能优化",
     icon: "gauge",
     description: "熟悉 TypeScript、Monorepo、Gulp/Webpack、接口类型生成与单测，擅长增量构建、包体治理与单体拆分。",
     skills: ["TypeScript", "Monorepo", "Webpack", "Vite"],
+  },
+  {
+    title: "服务端与接口开发",
+    icon: "workflow",
+    description: "基于 Express.js 与 NestJS 建设 Node.js BFF 与服务端接口，接入 Nacos 服务发现，负责接口聚合、参数校验、错误归一化与前后端联调。",
+    skills: ["Node.js", "Express.js", "NestJS", "Nacos"],
   },
   {
     title: "AI 应用集成",
@@ -110,7 +116,7 @@ export const featuredStack = [
   {
     title: "工程与多端",
     note: "复杂业务与多端交付",
-    skills: ["React", "Vue", "Angular", "TypeScript", "小程序", "Flutter"],
+    skills: ["React", "Vue", "Nuxt", "Angular", "TypeScript", "小程序", "Flutter"],
   },
 ];
 
