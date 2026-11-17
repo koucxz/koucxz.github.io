@@ -86,7 +86,7 @@
   ],
   "aiProjects": [
     {
-      "name": "群接龙经营智能体平台",
+      "name": "群接龙经营 AGENT",
       "stack": [
         "Agent",
         "MCP",

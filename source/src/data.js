@@ -225,7 +225,7 @@ export const workProjects = [
 export const aiProjects = [
   {
     key: "agent-platform",
-    name: "群接龙经营智能体平台",
+    name: "群接龙经营 AGENT",
     kicker: "Agent · MCP · RAG",
     years: "2025.04 — 2026.06",
     summary:
@@ -303,7 +303,7 @@ export const journey = [
   {
     year: "2025",
     title: "Agent 与 MCP",
-    text: "落地群接龙经营智能体平台，覆盖 Agent 架构、意图识别、RAG、MCP、上下文管理和评测闭环。",
+    text: "落地群接龙经营 AGENT，覆盖 Agent 架构、意图识别、RAG、MCP、上下文管理和评测闭环。",
   },
   {
     year: "2026",
