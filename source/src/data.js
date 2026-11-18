@@ -89,12 +89,6 @@ export const expertise = [
     skills: ["Dify", "MCP", "API", "多端入口"],
   },
   {
-    title: "应用运营与日志",
-    icon: "gauge",
-    description: "熟悉 Dockerfile/Nginx 部署及 Prometheus/Grafana/阿里云监控；关注埋点、Sentry、traceId 与用户反馈闭环。",
-    skills: ["Docker", "Nginx", "Prometheus", "Sentry"],
-  },
-  {
     title: "AI 工具使用",
     icon: "brain",
     description: "2023 年起将 AI 编程用于日常研发，参与过基于 Vibe Coding、SDD 的协作流程；使用 Claude Code、Codex、GitHub Copilot、Trae、Qoder 等工具。",
