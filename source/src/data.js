@@ -157,7 +157,7 @@ export const personalProjects = [
     personal: true,
     demoGif: "/assets/gencode-usage.gif",
     kicker: "个人项目 · AI Coding",
-    years: "2022.10 — 2022.11",
+    years: "2023.03 — 2023.04",
     summary:
       "在公司内部基于 Python、LangChain 实现 VS Code 代码生成插件，项目后续已开源。",
     bullets: [
