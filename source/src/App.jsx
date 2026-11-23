@@ -47,7 +47,8 @@ import {
   personalProjects,
   profile,
   selfIntroduction,
-} from "./data";
+} from "./content";
+import { copy, routeHref } from "./locale";
 
 const uniqueHighlights = (job) => {
   const seen = new Set([job.description]);
@@ -73,13 +74,7 @@ const navItems = [
   { id: "contact", label: "联系" },
 ];
 
-const referenceNavItems = [
-  { id: "about", label: "关于" },
-  { id: "projects", label: "项目" },
-  { id: "skills", label: "技能" },
-  { id: "experience", label: "经历" },
-  { id: "contact", label: "联系" },
-];
+const referenceNavItems = copy.nav;
 
 const iconMap = {
   layers: Layers3,
@@ -428,7 +423,7 @@ function ProjectMedia({ project, compact = false }) {
           <div className={`project-demo-primary ${isPrimaryLoaded ? "is-loaded" : "is-loading"}`}>
             <img
               src={project.demoGif || project.demoImage}
-              alt={`${project.name} 项目演示`}
+              alt={`${project.name} ${copy.demoAlt}`}
               ref={primaryImageRef}
               loading="lazy"
               decoding="async"
@@ -438,7 +433,7 @@ function ProjectMedia({ project, compact = false }) {
             {!isPrimaryLoaded && (
               <div className="project-demo-loading" aria-live="polite">
                 <Loader2 size={16} className="project-demo-loading-icon" />
-                <span>加载中</span>
+                <span>{copy.loading}</span>
               </div>
             )}
           </div>
@@ -458,7 +453,7 @@ function ProjectMedia({ project, compact = false }) {
           <span className="project-demo-play"><Play size={17} fill="currentColor" /></span>
           <div>
             <span>{project.name}</span>
-            <strong>项目演示位置</strong>
+            <strong>{copy.demoPlaceholder}</strong>
             <small>IMAGE / GIF / VIDEO</small>
           </div>
         </div>
@@ -468,13 +463,15 @@ function ProjectMedia({ project, compact = false }) {
 }
 
 function HighlightText({ text }) {
-  const [label, ...rest] = text.split("：");
-  if (rest.length === 0) return text;
+  // 中文用「：」、英文用「: 」分隔要点标题，超过 40 字的不当标题处理
+  const index = text.search(/：|: /);
+  if (index <= 0 || index > 40) return text;
 
+  const separatorLength = text[index] === "：" ? 1 : 2;
   return (
     <>
-      <strong>{label}：</strong>
-      {rest.join("：")}
+      <strong>{text.slice(0, index)}{copy.labelColon}</strong>
+      {text.slice(index + separatorLength)}
     </>
   );
 }
@@ -1437,7 +1434,7 @@ function SpotlightResume({ mobileOpen, setMobileOpen, copyText }) {
   );
 }
 
-const referenceRoles = ["前端工程师", "前端技术经理", "AI 应用工程师"];
+const referenceRoles = copy.roles;
 
 function TypewriterRole() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -1468,7 +1465,7 @@ function TypewriterRole() {
   }, [currentRole, deleting, display]);
 
   return (
-    <p className="reference-hero-role" aria-label={`职位：${profile.role}`}>
+    <p className="reference-hero-role" aria-label={`${copy.roleAriaPrefix}${profile.role}`}>
       <span aria-hidden="true">
         {display}
         <span className="reference-type-cursor">|</span>
@@ -1485,7 +1482,7 @@ function ReferencePortrait() {
         <img
           className="reference-portrait-image"
           src="/assets/avatar-real.jpg"
-          alt={`${profile.name}的照片`}
+          alt={copy.portraitAlt}
         />
       </div>
     </div>
@@ -1750,14 +1747,14 @@ function ReferenceResume({ copyText }) {
     <>
       <header className={`ref-nav ${navReady ? "is-visible" : ""}`}>
         <div className="ref-container ref-nav-inner">
-          <a className="ref-logo" href="#top" aria-label="返回顶部">
+          <a className="ref-logo" href="#top" aria-label={copy.backTop}>
             <span className="ref-logo-mark" aria-hidden="true">
               <FileText size={16} strokeWidth={2.2} />
               <Sparkles className="ref-logo-spark" size={8} strokeWidth={2.5} />
             </span>
-            <span className="ref-logo-name">寇晨迪</span>
+            <span className="ref-logo-name">{profile.name}</span>
           </a>
-          <nav className="ref-nav-links" aria-label="简历页面导航">
+          <nav className="ref-nav-links" aria-label={copy.navAria}>
             {referenceNavItems.map((item) => (
               <a
                 className={activeSection === item.id ? "is-active" : ""}
@@ -1770,8 +1767,11 @@ function ReferenceResume({ copyText }) {
             ))}
           </nav>
           <div className="ref-nav-actions">
-            <a className="ref-resume-download" href="/resume">
-              在线简历
+            <a className="ref-lang-link" href={routeHref.switchLanguage} aria-label={copy.switchLanguageAria}>
+              {copy.switchLanguage}
+            </a>
+            <a className="ref-resume-download" href={routeHref.resume}>
+              {copy.onlineResume}
               <FileText size={15} />
             </a>
           </div>
@@ -1796,7 +1796,7 @@ function ReferenceResume({ copyText }) {
                     href="#projects"
                     onClick={(event) => handleNavClick(event, "projects")}
                   >
-                    查看项目
+                    {copy.viewProjects}
                     <ArrowUpRight size={17} />
                   </a>
                 </div>
@@ -1805,21 +1805,21 @@ function ReferenceResume({ copyText }) {
             </div>
           </div>
 
-          <div className="reference-social-rail" aria-label="联系与社交链接">
+          <div className="reference-social-rail" aria-label={copy.socialAria}>
             <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
               <Github size={18} />
             </a>
-            <a href={`mailto:${profile.email}`} aria-label="发送邮件">
+            <a href={`mailto:${profile.email}`} aria-label={copy.mailAria}>
               <Mail size={18} />
             </a>
-            <a href={`tel:${profile.phone}`} aria-label="拨打电话">
+            <a href={`tel:${profile.phone}`} aria-label={copy.phoneAria}>
               <Phone size={18} />
             </a>
           </div>
           <a
             className="reference-scroll-cue"
             href="#projects"
-            aria-label="浏览个人项目"
+            aria-label={copy.browseProjectsAria}
             onClick={(event) => handleNavClick(event, "projects")}
           >
             <ArrowDown size={20} />
@@ -1830,8 +1830,8 @@ function ReferenceResume({ copyText }) {
           <div className="ref-container">
             <div className="ref-section-head reveal-on-scroll" id="projects">
               <span>01</span>
-              <h2>个人项目</h2>
-              <p>AI 产品、开发工具与工程实践</p>
+              <h2>{copy.projectsTitle}</h2>
+              <p>{copy.projectsLead}</p>
             </div>
 
             <div className="ref-project-list">
@@ -1863,7 +1863,7 @@ function ReferenceResume({ copyText }) {
                       </div>
                       {project.link && (
                         <a href={project.link} target="_blank" rel="noreferrer">
-                          查看项目
+                          {copy.viewProjects}
                           <ArrowUpRight size={14} />
                         </a>
                       )}
@@ -1885,8 +1885,8 @@ function ReferenceResume({ copyText }) {
         <section id="skills" className="ref-tech-stack" aria-labelledby="tech-stack-title">
           <div className="ref-container ref-tech-stack-layout">
             <div className="ref-tech-stack-copy reveal-on-scroll">
-              <span>CORE STACK / 技术能力</span>
-              <h2 id="tech-stack-title">核心技术栈</h2>
+              <span>{copy.coreStackKicker}</span>
+              <h2 id="tech-stack-title">{copy.coreStackTitle}</h2>
             </div>
             <div className="ref-tech-stack-list reveal-on-scroll" style={{ "--reveal-delay": "90ms" }}>
               {featuredStack.map((group, index) => (
@@ -1909,8 +1909,8 @@ function ReferenceResume({ copyText }) {
           <div className="ref-container">
             <div className="ref-section-head reveal-on-scroll">
               <span>02</span>
-              <h2>技术能力</h2>
-              <p>前端架构、工程化与 AI 应用能力</p>
+              <h2>{copy.skillsTitle}</h2>
+              <p>{copy.skillsLead}</p>
             </div>
             <div className="ref-skill-grid">
               {expertise.map((group, index) => {
@@ -1941,8 +1941,8 @@ function ReferenceResume({ copyText }) {
           <div className="ref-container">
             <div className="ref-section-head reveal-on-scroll">
               <span>03</span>
-              <h2>工作经历</h2>
-              <p>长期负责复杂业务与团队交付</p>
+              <h2>{copy.experienceTitle}</h2>
+              <p>{copy.experienceLead}</p>
             </div>
             <div className="ref-experience-list">
               {experience.map((job, index) => (
@@ -1979,17 +1979,17 @@ function ReferenceResume({ copyText }) {
           <div className="ref-container ref-contact-grid reveal-on-scroll">
             <div>
               <span className="ref-contact-kicker">GET IN TOUCH</span>
-              <h2>一起做成点事</h2>
+              <h2>{copy.contactTitle}</h2>
               <ContactList />
             </div>
             <div className="ref-contact-actions">
               <a href={`mailto:${profile.email}`}>
                 <Mail size={17} />
-                发邮件
+                {copy.sendEmail}
               </a>
               <button type="button" onClick={() => setWechatOpen(true)}>
                 <MessageCircle size={17} />
-                加微信
+                {copy.addWechat}
               </button>
             </div>
           </div>
@@ -2010,27 +2010,27 @@ function ReferenceResume({ copyText }) {
                   className="ref-wechat-dialog-icon-close"
                   type="button"
                   onClick={() => setWechatOpen(false)}
-                  aria-label="关闭微信二维码"
+                  aria-label={copy.wechatCloseAria}
                 >
                   <X size={18} />
                 </button>
-                <h3 id="wechat-dialog-title">微信扫码添加</h3>
-                <img src="/assets/wechat-qr.jpg" alt="寇晨迪微信二维码" />
-                <p>寇晨迪 · AI 应用工程师</p>
+                <h3 id="wechat-dialog-title">{copy.wechatTitle}</h3>
+                <img src="/assets/wechat-qr.jpg" alt={copy.wechatAlt} />
+                <p>{copy.wechatName}</p>
                 <button
                   className="ref-wechat-dialog-close"
                   type="button"
                   onClick={() => setWechatOpen(false)}
                 >
-                  关闭
+                  {copy.close}
                 </button>
               </div>
             </div>
           )}
           <div className="ref-container ref-footer">
-            <span>© 2026 寇晨迪</span>
+            <span>{copy.footerName}</span>
             <span>AI APPLICATION ENGINEER · SHENZHEN</span>
-            <a href="#top">回到顶部 ↑</a>
+            <a href="#top">{copy.backToTopText}</a>
           </div>
         </section>
       </main>

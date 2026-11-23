@@ -1,0 +1,189 @@
+{
+  "profile": {
+    "name": "Chendi Kou",
+    "role": "Frontend Engineer / AI Application Development",
+    "city": "Shenzhen, China",
+    "phone": "15617922762",
+    "email": "koucxz@hotmail.com",
+    "website": "https://koucxz.github.io/en",
+    "language": "English: CET-6, conversational"
+  },
+  "advantages": [
+    {
+      "title": "Engineering leadership",
+      "text": "Nearly 10 years of production experience with the past 3 years focused on AI applications. Led frontend architecture and delivery for e-commerce, payments, IM, and operations platforms, owning architecture reviews, work breakdown, quality, releases, and mentoring."
+    },
+    {
+      "title": "Agent delivery",
+      "text": "Led an operations decision Agent covering Agent architecture, intent recognition, RAG, MCP, context management, and an evaluation loop; 95% tool-selection success, 4.8s P95 latency, and 87% end-to-end task success."
+    },
+    {
+      "title": "Performance and multi-platform delivery",
+      "text": "Reduced frontend startup from 5–8 minutes to under 90 seconds and cut Mini Program main-package size by 20%+ across PC, H5, Mini Program, Flutter, and Hybrid App surfaces."
+    }
+  ],
+  "expertise": [
+    {
+      "title": "AI application engineering",
+      "description": "RAG, embeddings, vector search, hybrid retrieval, reranking, Agent workflows, ReAct, Tool Calling, MCP, context management, and structured outputs."
+    },
+    {
+      "title": "Frontend and cross-platform",
+      "description": "TypeScript, Vue 2/3, React, Angular, Flutter, Web/H5, Mini Programs, Hybrid Apps, Dify Webapp, streaming UI, and state management."
+    },
+    {
+      "title": "Backend and integration",
+      "description": "Node.js, Express.js, NestJS, BFF, REST APIs, Nacos, Swagger/OpenAPI, Docker, and Nginx."
+    },
+    {
+      "title": "Engineering and observability",
+      "description": "Monorepo, Gulp/Webpack, code generation, unit testing, incremental builds, virtualization, Prometheus, Grafana, Sentry, and traceId."
+    },
+    {
+      "title": "AI development tools",
+      "description": "Claude Code, Codex, GitHub Copilot, Trae, Qoder, Vibe Coding, SDD, sub2api, and new-api."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Guangzhou Qunjielong",
+      "role": "Frontend Technical Manager",
+      "date": "Jul 2020 – Present",
+      "highlights": [
+        "Led delivery across user, payments, IM, e-commerce, and operations platforms; owned architecture reviews, work breakdown, quality, releases, and mentoring.",
+        "Drove AI applications and frontend platform initiatives, integrating Dify, MCP, and low-code capabilities; owned technical design, frontend integration, and cross-team delivery.",
+        "Proposed interaction and technical improvements; contributed to requirements, product design, and delivery, and initiated AI projects from design through business rollout."
+      ]
+    },
+    {
+      "company": "Guangzhou Lexing Technology",
+      "role": "Frontend Team Lead",
+      "date": "Apr 2018 – May 2020",
+      "highlights": [
+        "Led multi-platform delivery for 2B dealer tools and 2C automotive content products; owned architecture, technology selection, design reviews, and releases."
+      ]
+    },
+    {
+      "company": "Guangzhou Boyite Technology",
+      "role": "Frontend Engineer",
+      "date": "Apr 2017 – Apr 2018",
+      "highlights": [
+        "Built PC and mobile industrial data-visualization interfaces with ECharts and D3.js; added chart editing and multi-screen layouts, constrained concurrent rendering, and rasterized selected charts to reduce out-of-memory risk."
+      ]
+    }
+  ],
+  "aiProjects": [
+    {
+      "name": "Qunjielong Operations Decision Agent",
+      "stack": [
+        "Agent",
+        "LangChain",
+        "MCP",
+        "RAG"
+      ],
+      "years": "Dec 2025 – Jun 2026",
+      "summary": "Built an operations decision Agent for group-buying hosts, unifying diagnosis, product selection, assisted selling, and after-sales tasks across multiple admin systems into a natural-language workflow. Addressed informal input, long business chains, tool scale, and context loss with Agent orchestration and shared state.",
+      "bullets": [
+        "Agent orchestration: designed an Agent scheduler and domain-task execution model, splitting diagnosis, product selection, assisted selling, and after-sales into independently executable business units.",
+        "Intent understanding: combined rules, vector retrieval, and LLM classification for colloquial, abbreviated, and multi-intent queries; added clarification, rejection, and slot completion; reached 92% intent accuracy.",
+        "Context and replanning: layered system rules, task state, tool results, and user preferences, loading context by task stage and recomputing only affected steps when inventory, price, or goals changed.",
+        "Tool governance and evaluation: connected business systems through MCP and Tool Calling; filtered tools by role, scenario, and risk, with permissions, idempotency, audit, and result feedback; achieved 95% tool-selection success, 4.8s P95 latency, and 87% end-to-end task success."
+      ]
+    },
+    {
+      "name": "Qunjielong AI Business Applications",
+      "stack": [
+        "Dify",
+        "MCP",
+        "Node.js",
+        "RAG"
+      ],
+      "years": "Apr 2025 – Nov 2025",
+      "summary": "Built two business applications with Dify: a customer-service knowledge base and a product-selection calendar, turning service records and business metrics into conversational capabilities.",
+      "bullets": [
+        "Business MCP server: built a Node.js MCP server with the MCP SDK, exposing activity, homepage, order, product, and assisted-selling capabilities via tool definitions and parameter mappings.",
+        "Customer-service knowledge base: curated 1,970 records with labels, role segmentation, and chunking; configured data lookup, slot completion, and human handoff, then sampled historical queries to validate results.",
+        "Product-selection calendar: combined metric lookup with product analysis through Dify Webapp and MCP; extended the chat UI and generated request/response types with openapi-typescript."
+      ]
+    }
+  ],
+  "workProjects": [
+    {
+      "name": "Qunjielong Mini Program",
+      "stack": [
+        "Mini Program",
+        "Angular",
+        "TypeScript",
+        "Flutter"
+      ],
+      "years": "Jul 2020 – Present",
+      "summary": "For a social-commerce platform with hundreds of millions of RMB in monthly GMV and 1M daily active users; delivered Mini Program, PC, operations-console, and Flutter experiences.",
+      "bullets": [
+        "Build acceleration: optimized incremental builds, caching, and package size, cutting startup from 5–8 minutes to under 90 seconds; added TypeScript/UI unit tests with 60%+ coverage.",
+        "Core journeys: iterated virtualization, page loading, and CLS; led IM, home, and checkout refactors, and owned Flutter architecture plus embedded-H5 white-screen tracing.",
+        "GEO and BFF: staticized Angular public pages with structured data, sitemap, and llms.txt for AI answer engines; built Node.js aggregation APIs with unified error results."
+      ]
+    },
+    {
+      "name": "Daka Alliance",
+      "stack": [
+        "React 19",
+        "Monorepo",
+        "WeChat Store"
+      ],
+      "years": "Oct 2024 – Feb 2025",
+      "summary": "Integrated with the WeChat Store ecosystem to help suppliers acquire more customers; built the PC site and operations console across product marketplace, sourcing, traceability, and product-detail workflows.",
+      "bullets": [
+        "Multi-app architecture: managed the PC site and operations console in a Monorepo, sharing components, modules, and API types.",
+        "Complex forms: split state, field dependencies, validation, and submission by module; guarded routes with React Router, AuthGuard, and roles."
+      ]
+    },
+    {
+      "name": "Lexing Automotive Business Platform",
+      "stack": [
+        "PC",
+        "H5",
+        "Mini Program",
+        "Nuxt.js"
+      ],
+      "years": "Apr 2018 – May 2020",
+      "summary": "Delivered multiple platforms for Aite Good Car and Leying Car across dealer tools, automotive content, orders, payments, logistics, and finance.",
+      "bullets": [
+        "Multi-platform delivery: led Aite Good Car PC, H5, and Mini Program with Nuxt SSR, keeping first paint under 600ms and ranking model-keyword pages in Bing and Google top 1–3.",
+        "Stability: production logs, analytics, and Sentry; split the frontend monolith and optimized Webpack, cutting builds from 10 minutes to under 2."
+      ]
+    }
+  ],
+  "personalProjects": [
+    {
+      "name": "VideoNote: Multimodal Video Notes",
+      "stack": [],
+      "years": "May 2026 – Aug 2026",
+      "summary": "",
+      "bullets": [
+        "Multimodal pipeline: chained FFmpeg, ASR, key-frame extraction, and VLM/LLM into structured, searchable, question-answerable video notes.",
+        "Resumable long tasks and model abstraction: persisted stage checkpoints so failed tasks resume without rework, and abstracted model providers plus vector retrieval for local fallback."
+      ],
+      "link": "https://video-note-rho.vercel.app/"
+    },
+    {
+      "name": "GenCode: VS Code AI Coding Extension",
+      "stack": [
+        "Python",
+        "LangChain"
+      ],
+      "years": "Mar 2023 – Apr 2023",
+      "summary": "",
+      "bullets": [
+        "Built an internal VS Code code-generation extension with Python and LangChain; the project was later open-sourced."
+      ],
+      "link": "https://github.com/koucxz/gencode-vscode"
+    }
+  ],
+  "education": {
+    "school": "Zhengzhou University",
+    "degree": "B.Eng. in Communication Engineering",
+    "note": "Project 211 / Double First-Class",
+    "date": "Sep 2012 – Jun 2016"
+  }
+}

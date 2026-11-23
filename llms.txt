@@ -1,11 +1,19 @@
 # 寇晨迪 · 前端与 AI 应用工程师
 
-> 寇晨迪的个人简历与项目作品集。近十年一线研发经验，近 3 年聚焦 AI 应用，目前担任前端技术经理，求职方向为前端工程师、前端技术经理、AI 应用工程师。
+> 寇晨迪的个人简历与项目作品集。近十年一线研发经验，近 3 年聚焦 AI 应用，目前担任前端技术经理，求职方向为前端工程师、前端技术经理、AI 应用工程师。英文站见 https://koucxz.github.io/en/ 。
+
+## 站点语言与地址
+
+- 中文主页：https://koucxz.github.io/
+- 英文主页：https://koucxz.github.io/en/
+- 英文两页简历：https://koucxz.github.io/resume/ （英文附件 /resume-en.docx，全栈方向 /resume-en-fullstack.docx）
+- 中文两页简历：https://koucxz.github.io/zh/resume/ （中文附件 /resume.docx）
 
 ## 简历
 
 - [个人主页](https://koucxz.github.io/)：个人介绍、项目演示、技能、工作经历和联系方式。
-- [两页简历](https://koucxz.github.io/resume/)：完整简历预览，支持直接下载 PDF。
+- [两页简历（英文）](https://koucxz.github.io/resume/)：英文完整简历预览，支持直接下载矢量 PDF。
+- [两页简历（中文）](https://koucxz.github.io/zh/resume/)：中文完整简历预览，支持直接下载矢量 PDF。
 - [GitHub](https://github.com/koucxz)：个人开源项目。
 
 ## 技术与经验
@@ -21,6 +29,11 @@
 - [VideoNote 多模态视频笔记系统](https://video-note-rho.vercel.app/)：串联 FFmpeg、ASR、关键帧与 VLM/LLM，生成结构化视频笔记，支持长任务失败恢复。
 - [SignalDock AI 信息雷达](https://signaldock-five.vercel.app/)：多源信息采集、去重、事件合并、变化检测与 AI 分析。
 - [GenCode VS Code 智能编码插件](https://github.com/koucxz/gencode-vscode)：基于 Python、LangChain 的代码生成插件，已开源。
+
+## English
+
+- [English portfolio](https://koucxz.github.io/en/): Chendi Kou, frontend engineer and AI application engineer with nearly 10 years of production experience.
+- [English resume](https://koucxz.github.io/resume/): two-page resume with a downloadable PDF.
 
 ## 联系
 

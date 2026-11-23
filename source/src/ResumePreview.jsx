@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowUpRight, Download, Loader2 } from "lucide-react";
-import resumeData from "./resume-data.json";
+import resumeZh from "./resume-data.json";
+import resumeEn from "./resume-data-en.json";
 import { downloadResumePdf } from "./resume-pdf";
+import { LANG, copy, routeHref } from "./locale";
 import "./resume-preview.css";
+
+const resumeData = LANG === "en" ? resumeEn : resumeZh;
 
 const {
   advantages,
@@ -16,12 +20,13 @@ const {
 } = resumeData;
 
 function splitBullet(bullet) {
-  const separatorIndex = bullet.indexOf("：");
-  if (separatorIndex === -1) return [null, bullet];
+  // 中文用「：」、英文用「: 」分隔要点标题，过长的不当标题处理
+  const separatorIndex = bullet.search(/：|: /);
+  if (separatorIndex <= 0 || separatorIndex > 40) return [null, bullet];
 
   return [
     bullet.slice(0, separatorIndex),
-    bullet.slice(separatorIndex + 1),
+    bullet.slice(separatorIndex + (bullet[separatorIndex] === "：" ? 1 : 2)),
   ];
 }
 
@@ -64,14 +69,14 @@ function ProjectBlock({ project, showLink = false }) {
       <ol className="resume-detail-list">
         {project.bullets.map(([title, text]) => (
           <li key={`${project.name}-${title || text}`}>
-            {title && <strong>{title}：</strong>}
+            {title && <strong>{title}{copy.labelColon}</strong>}
             <span>{text}</span>
           </li>
         ))}
       </ol>
       {showLink && project.link && (
         <a className="resume-project-link" href={project.link} target="_blank" rel="noreferrer">
-          查看项目
+          {copy.resume.viewProject}
           <ArrowUpRight size={12} />
         </a>
       )}
@@ -85,7 +90,7 @@ function ResumePreview() {
   useEffect(() => {
     const previousTitle = document.title;
     document.body.classList.add("resume-print-page");
-    document.title = "寇晨迪 · 全栈开发工程师简历";
+    document.title = copy.resume.docTitle;
     return () => {
       document.body.classList.remove("resume-print-page");
       document.title = previousTitle;
@@ -99,8 +104,8 @@ function ResumePreview() {
     try {
       await downloadResumePdf();
     } catch (error) {
-      console.error("生成简历 PDF 失败", error);
-      window.alert("PDF 生成失败，请稍后重试。");
+      console.error("Failed to generate the resume PDF", error);
+      window.alert(copy.resume.pdfError);
     } finally {
       setIsGeneratingPdf(false);
     }
@@ -109,9 +114,21 @@ function ResumePreview() {
   return (
     <div className="resume-preview-page">
       <div className="resume-preview-tools">
-        <a className="resume-home-link" href="/">
+        <a className="resume-home-link" href={routeHref.portfolio}>
           <ArrowLeft size={15} />
-          返回首页
+          {copy.resume.backHome}
+        </a>
+        <a className="resume-home-link" href={routeHref.resumeFile} download>
+          <Download size={15} />
+          DOCX
+        </a>
+        {LANG === "en" && (
+          <a className="resume-home-link" href="/resume-en-fullstack.docx" download>
+            Full-Stack
+          </a>
+        )}
+        <a className="resume-home-link" href={routeHref.resumeOtherLanguage}>
+          {copy.switchLanguage}
         </a>
         <button
           className="resume-download-button"
@@ -121,7 +138,7 @@ function ResumePreview() {
           aria-busy={isGeneratingPdf}
         >
           {isGeneratingPdf ? <Loader2 size={15} className="resume-loading-icon" /> : <Download size={15} />}
-          {isGeneratingPdf ? "生成中..." : "下载 PDF"}
+          {isGeneratingPdf ? copy.resume.generating : copy.resume.downloadPdf}
         </button>
       </div>
 
@@ -129,7 +146,7 @@ function ResumePreview() {
         <article className="resume-sheet resume-sheet-one">
           <header className="resume-document-header">
             <h1>{profile.name}</h1>
-            <p>求职意向：{profile.role} <span className="resume-online-link">｜ 线上简历：<a href={profile.website}>koucxz.github.io</a></span></p>
+            <p>{copy.resume.targetRole}{profile.role} <span className="resume-online-link">{copy.resume.onlineLabel}<a href={profile.website}>koucxz.github.io</a></span></p>
             <div className="resume-contact-line">
               <span>{profile.city}</span>
               <a href={`tel:${profile.phone}`}>{profile.phone}</a>
@@ -139,11 +156,11 @@ function ResumePreview() {
           </header>
 
           <section className="resume-section">
-            <SectionHeading title="个人优势" />
+            <SectionHeading title={copy.resume.sections.advantages} />
             <ol className="resume-numbered-list">
               {advantages.map((item) => (
                 <li key={item.title}>
-                  <strong>{item.title}：</strong>
+                  <strong>{item.title}{copy.labelColon}</strong>
                   {item.text}
                 </li>
               ))}
@@ -151,11 +168,11 @@ function ResumePreview() {
           </section>
 
           <section className="resume-section">
-            <SectionHeading title="专业技能" />
+            <SectionHeading title={copy.resume.sections.skills} />
             <ol className="resume-numbered-list">
               {expertise.map((item) => (
                 <li key={item.title}>
-                  <strong>{item.title}：</strong>
+                  <strong>{item.title}{copy.labelColon}</strong>
                   {item.description}
                 </li>
               ))}
@@ -163,7 +180,7 @@ function ResumePreview() {
           </section>
 
           <section className="resume-section">
-            <SectionHeading title="工作经历" />
+            <SectionHeading title={copy.resume.sections.work} />
             <div className="resume-work-list">
               {experience.map((job) => (
                 <article className="resume-work-item" key={job.company}>
@@ -183,7 +200,7 @@ function ResumePreview() {
           </section>
 
           <section className="resume-section">
-            <SectionHeading title="AI 项目经历" />
+            <SectionHeading title={copy.resume.sections.ai} />
             <div className="resume-project-list">
               {aiProjectsPageOne.map((project) => (
                 <ProjectBlock project={project} key={project.name} />
@@ -194,7 +211,7 @@ function ResumePreview() {
 
         <article className="resume-sheet resume-sheet-two">
           <section className="resume-section resume-first-section" aria-labelledby="ai-projects-continued">
-            <h2 className="resume-visually-hidden" id="ai-projects-continued">AI 项目经历续</h2>
+            <h2 className="resume-visually-hidden" id="ai-projects-continued">{copy.resume.sections.aiCont}</h2>
             <div className="resume-project-list">
               {aiProjectsPageTwo.map((project) => (
                 <ProjectBlock project={project} key={project.name} />
@@ -203,7 +220,7 @@ function ResumePreview() {
           </section>
 
           <section className="resume-section">
-            <SectionHeading title="业务项目经历" />
+            <SectionHeading title={copy.resume.sections.workProjects} />
             <div className="resume-project-list">
               {businessProjectBlocks.map((project) => (
                 <ProjectBlock project={project} key={project.name} />
@@ -212,7 +229,7 @@ function ResumePreview() {
           </section>
 
           <section className="resume-section">
-            <SectionHeading title="个人项目" />
+            <SectionHeading title={copy.resume.sections.personal} />
             <div className="resume-project-list">
               {personalProjectBlocks.map((project) => (
                 <ProjectBlock project={project} showLink key={project.name} />
@@ -221,7 +238,7 @@ function ResumePreview() {
           </section>
 
           <section className="resume-section">
-            <SectionHeading title="教育经历" />
+            <SectionHeading title={copy.resume.sections.education} />
             <div className="resume-education-row">
               <div>
                 <strong>{education.school}</strong>

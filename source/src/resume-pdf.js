@@ -1,3 +1,5 @@
+import { copy } from "./locale";
+
 const PAGE_WIDTH = 595.28;
 const PAGE_HEIGHT = 841.89;
 const PX_TO_PT = 0.75;
@@ -192,7 +194,7 @@ function drawListMarkers(page, sheet, sheetRect, font) {
 
 async function loadFont(url) {
   const response = await fetch(url);
-  if (!response.ok) throw new Error(`无法加载字体：${url}`);
+  if (!response.ok) throw new Error(`${copy.resume.pdfFontError}: ${url}`);
   return new Uint8Array(await response.arrayBuffer());
 }
 
@@ -255,8 +257,8 @@ export async function downloadResumePdf() {
     // 字体文件已经裁剪过字集，再次做子集会丢失部分粗体字形。
     const regularFont = await pdf.embedFont(regularBytes);
     const boldFont = await pdf.embedFont(boldBytes);
-    pdf.setTitle("寇晨迪 · 全栈开发工程师简历");
-    pdf.setAuthor("寇晨迪");
+    pdf.setTitle(copy.resume.pdfTitle);
+    pdf.setAuthor(copy.resume.pdfAuthor);
 
     for (const sheet of exportContext.sheets) {
       const page = pdf.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
@@ -285,7 +287,7 @@ export async function downloadResumePdf() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "寇晨迪_全栈开发工程师_郑州大学.pdf";
+    link.download = copy.resume.pdfFile;
     link.click();
     window.setTimeout(() => URL.revokeObjectURL(url), 60000);
   } finally {

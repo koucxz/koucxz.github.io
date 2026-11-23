@@ -1505,6 +1505,26 @@ html {
   color: #3d5f68;
 }
 
+.ref-lang-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--ref-mist-ink);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.ref-lang-link:hover {
+  background: var(--ref-mist);
+  color: var(--ref-orange-deep);
+}
+
 .reference-hero {
   position: relative;
   height: auto;
@@ -2234,6 +2254,12 @@ html {
     min-height: 36px;
     padding: 0 13px;
     font-size: 9px;
+  }
+
+  .ref-lang-link {
+    min-height: 36px;
+    padding: 0 8px;
+    font-size: 10px;
   }
 
   .ref-tech-stack {
