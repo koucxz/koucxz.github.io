@@ -92,6 +92,7 @@ const zhCopy = {
     pdfTitle: "寇晨迪 · 全栈开发工程师简历",
     pdfAuthor: "寇晨迪",
     pdfFile: "寇晨迪_全栈开发工程师_郑州大学.pdf",
+    docxFile: "寇晨迪_全栈开发工程师_郑州大学.docx",
     pdfFontError: "无法加载字体",
   },
 };
@@ -160,7 +161,8 @@ const enCopy = {
     pdfError: "Failed to generate the PDF. Please try again.",
     pdfTitle: "Chendi Kou · Frontend Engineer Resume",
     pdfAuthor: "Chendi Kou",
-    pdfFile: "Chendi_Kou_Frontend_Engineer_Resume.pdf",
+    pdfFile: "Chendi_Kou_FrontEnd_Resume.pdf",
+    docxFile: "Chendi_Kou_FrontEnd_Resume.docx",
     pdfFontError: "Failed to load the font",
   },
 };

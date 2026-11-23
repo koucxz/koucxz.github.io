@@ -6,8 +6,8 @@
 
 - 中文主页：https://koucxz.github.io/
 - 英文主页：https://koucxz.github.io/en/
-- 英文两页简历：https://koucxz.github.io/resume/ （英文附件 /resume-en.docx，全栈方向 /resume-en-fullstack.docx）
-- 中文两页简历：https://koucxz.github.io/zh/resume/ （中文附件 /resume.docx）
+- 英文两页简历：https://koucxz.github.io/resume/ （英文附件 /resume-en.docx，Frontend Engineer / AI Application Development）
+- 中文两页简历（全栈开发工程师）：https://koucxz.github.io/zh/resume/ （中文附件 /resume.docx）
 
 ## 简历
 

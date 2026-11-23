@@ -25,7 +25,7 @@ npm run dev
 - `src/resume-data.json` / `src/resume-data-en.json`：两页简历内容
 - `src/locale.js` 的 `copy`：界面文案（导航、按钮、分区标题、PDF 元信息等）
 
-英文内容以 `outputs/Chendi_Kou_Frontend_Engineer_Resume.docx` 为准，附件放在 `public/resume-en.docx`（前端方向）与 `public/resume-en-fullstack.docx`（全栈方向），中文附件为 `public/resume.docx`。
+英文内容以 `outputs/Chendi_Kou_Frontend_Engineer_Resume.docx` 为准，附件放在 `public/resume-en.docx`（Frontend Engineer / AI Application Development）与 `public/resume.docx`（全栈开发工程师）；下载时统一改名为 `Chendi_Kou_FrontEnd_Resume.pdf/.docx`、`寇晨迪_全栈开发工程师_郑州大学.pdf/.docx`。
 
 ## 部署
 

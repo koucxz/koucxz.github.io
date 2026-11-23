@@ -118,7 +118,7 @@ function ResumePreview() {
           <ArrowLeft size={15} />
           {copy.resume.backHome}
         </a>
-        <a className="resume-home-link" href={routeHref.resumeFile} download>
+        <a className="resume-home-link" href={routeHref.resumeFile} download={copy.resume.docxFile}>
           <Download size={15} />
           DOCX
         </a>
