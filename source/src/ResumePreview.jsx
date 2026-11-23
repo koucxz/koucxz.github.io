@@ -122,11 +122,6 @@ function ResumePreview() {
           <Download size={15} />
           DOCX
         </a>
-        {LANG === "en" && (
-          <a className="resume-home-link" href="/resume-en-fullstack.docx" download>
-            Full-Stack
-          </a>
-        )}
         <a className="resume-home-link" href={routeHref.resumeOtherLanguage}>
           {copy.switchLanguage}
         </a>
