@@ -144,7 +144,7 @@ function ResumePreview() {
             <p>{copy.resume.targetRole}{profile.role} <span className="resume-online-link">{copy.resume.onlineLabel}<a href={profile.website}>koucxz.github.io</a></span></p>
             <div className="resume-contact-line">
               <span>{profile.city}</span>
-              <a href={`tel:${profile.phone}`}>{profile.phone}</a>
+              <a href={`tel:${profile.phone.replace(/[^\d+]/g, "")}`}>{profile.phone}</a>
               <a href={`mailto:${profile.email}`}>{profile.email}</a>
               <span>{profile.language}</span>
             </div>

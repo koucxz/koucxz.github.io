@@ -6,7 +6,7 @@ export const profile = {
   currentRole: "Frontend Technical Manager",
   experience: "Nearly 10 years",
   city: "Shenzhen, China",
-  phone: "15617922762",
+  phone: "+86 156 1792 2762",
   email: "koucxz@hotmail.com",
   github: "https://github.com/koucxz",
   availability: "Open to roles · Frontend Engineer / Frontend Tech Lead / AI Application Engineer",

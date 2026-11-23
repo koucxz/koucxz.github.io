@@ -198,7 +198,7 @@ function NavToggle({ onClick }) {
 function ContactList({ compact = false }) {
   return (
     <div className={`contact-list ${compact ? "is-compact" : ""}`}>
-      <a href={`tel:${profile.phone}`}>
+      <a href={`tel:${profile.phone.replace(/[^\d+]/g, "")}`}>
         <Phone size={15} />
         {profile.phone}
       </a>
@@ -1812,7 +1812,7 @@ function ReferenceResume({ copyText }) {
             <a href={`mailto:${profile.email}`} aria-label={copy.mailAria}>
               <Mail size={18} />
             </a>
-            <a href={`tel:${profile.phone}`} aria-label={copy.phoneAria}>
+            <a href={`tel:${profile.phone.replace(/[^\d+]/g, "")}`} aria-label={copy.phoneAria}>
               <Phone size={18} />
             </a>
           </div>
